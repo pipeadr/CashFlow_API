@@ -57,14 +57,14 @@ namespace CashFlow_API.Domain.Services
         {
             try
             {
-                var paises = await GetPersonaByIdAsync(Cedula);
-                if (paises == null)
+                var persona = await GetPersonaByIdAsync(Cedula);
+                if (persona == null)
                 {
                     return null;
                 }
-                _context.Personas.Remove(paises);
+                _context.Personas.Remove(persona);
                 await _context.SaveChangesAsync();
-                return paises;
+                return persona;
             }
             catch (DbUpdateException ex)
             {

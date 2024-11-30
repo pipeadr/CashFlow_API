@@ -13,9 +13,8 @@ namespace CashFlow_API.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Persona>().HasIndex(c => c.Nombre).IsUnique();//Aquí creo un indice
             modelBuilder.Entity<Persona>().HasIndex(c => c.Cedula).IsUnique();
-            modelBuilder.Entity<Gasto>().HasIndex(g => g.Referencia).IsUnique();
+            modelBuilder.Entity<Gasto>().HasIndex("Referencia", "PersonaId").IsUnique();
         }
 
         #region DbSets

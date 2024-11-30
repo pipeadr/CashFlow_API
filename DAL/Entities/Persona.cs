@@ -19,5 +19,9 @@ namespace CashFlow_API.DAL.Entities
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public long Cedula { get; set; }
 
+        //Relación con la tabla Gasto
+        [Display(Name = "Gastos")]
+        public ICollection<Gasto>? Gastos { get; set; }
+
     }
 }

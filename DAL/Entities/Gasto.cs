@@ -18,5 +18,12 @@ namespace CashFlow_API.DAL.Entities
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
         public string Descripcion { get; set; }
+
+        //Relación con la tabla Persona
+        [Display(Name = "Persona")]
+        public Persona? Persona { get; set; }
+        //FK
+        [Display(Name = "Id Persona")]
+        public Guid PersonaId { get; set; }
     }
 }
